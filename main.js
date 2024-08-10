@@ -3,12 +3,24 @@ function getComputerChoice() {
     let result = (Math.floor((Math.random() * 3) + 1));
 
     if (result === 1) {
-        return 'Rock';
+        return 'rock';
     } else if (result === 2) {
-        return 'Paper';
+        return 'paper';
     } else {
-        return 'Scissors';
+        return 'scissors';
     }
 }
+function getHumanChoice() {
+    let inputFromUser = prompt('Enter your choice: Rock, Paper or Scissors?').toLowerCase();
 
-console.log(getComputerChoice());
+    if (inputFromUser === 'rock') {
+        return 'rock';
+    } else if (inputFromUser === 'paper') {
+        return 'paper';
+    } else {
+        return 'scissors';
+    }
+
+}
+
+console.log(getHumanChoice());
