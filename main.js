@@ -49,12 +49,29 @@ function playRound(humanChoice,computerChoice) {
         humanScore += 1;
         return 'You win! Scissors beats Paper';
     } else if (humanChoice === 'scissors' && computerChoice === 'rock'){
-        computerChoice += 1;
+        computerScore += 1;
         return 'You lose! Rock beats Scissors';
     } else {
         return 'Enter a valid choice !!';
     }
 }
-// check bug when entering invalid choise
-console.log(playRound(getHumanChoice(), getComputerChoice()));
 
+function playGame() {
+
+    humanScore = 0;
+    computerScore = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(),getComputerChoice());
+    }
+
+    if (humanScore < computerScore) {
+        return 'The computer wins!'
+    } else if (humanScore === computerScore) {
+        return 'Draw';
+    } else {
+        return 'You win!!!';
+    }
+}
+
+console.log(playGame());
