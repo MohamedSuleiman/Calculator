@@ -21,8 +21,10 @@ function getHumanChoice() {
         return 'rock';
     } else if (inputFromUser === 'paper') {
         return 'paper';
-    } else {
+    } else if (inputFromUser === 'scissors'){
         return 'scissors';
+    } else {
+        return 'invalid';
     }
 
 }
@@ -50,9 +52,9 @@ function playRound(humanChoice,computerChoice) {
         computerChoice += 1;
         return 'You lose! Rock beats Scissors';
     } else {
-        return 'Enter a valid choice';
+        return 'Enter a valid choice !!';
     }
 }
-
+// check bug when entering invalid choise
 console.log(playRound(getHumanChoice(), getComputerChoice()));
 
